@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commande de Cookies</title>
+  <!-- Importation de polices élégantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Réinitialisation basique */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #3e2723, #5d4037);
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    /* Conteneur du logo */
+    .logo-container {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .logo-container img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Conteneur du formulaire avec image en background */
+    .form-container {
+      position: relative;
+      background-image: url("https://th.bing.com/th?id=OSK.f17a94bf247d4a6ee8b3d0f59e7791d3");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    /* Overlay pour adoucir le background */
+    .form-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6); /* Opacité réduite pour améliorer la visibilité */
+      border-radius: 15px;
+      z-index: 1;
+    }
+    
+    /* Contenu du formulaire au-dessus de l'overlay */
+    .form-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      color: #3e2723;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #3e2723;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: rgba(255, 255, 255, 0.95);
+      color: #3e2723;
+    }
+    
+    input::placeholder,
+    textarea::placeholder {
+      color: #8d6e63;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #6d4c41, #4e342e);
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <!-- Nouveau logo -->
+    <img src="https://i.imgur.com/WrD4e37_d.jpeg?maxwidth=520&shape=thumb&fidelity=high" alt="Logo de Cookies">
+  </div>
+  <div class="form-container">
+    <div class="form-content">
+      <h1>Commande de Cookies</h1>
+      <form action="https://formspree.io/f/xjkgnadq" method="POST">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+        
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+        
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Votre email" required>
+        
+        <label for="telephone">Téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro de téléphone" required>
+        
+        <label for="adresse">Adresse :</label>
+        <textarea id="adresse" name="adresse" rows="3" placeholder="Votre adresse complète" required></textarea>
+        
+        <label for="livraison">Mode de livraison :</label>
+        <select id="livraison" name="livraison" required>
+          <option value="">-- Choisissez votre mode de livraison --</option>
+          <option value="standard">Livraison Standard (5.00€)</option>
+          <option value="express">Livraison Express (7.50€)</option>
+          <option value="pickup">Retrait en boutique (Gratuit)</option>
+        </select>
+        
+        <label for="commande">
+          Détails de la commande<br>
+          <small>(Ex: "Cookie au chocolat / Cookie aux pépites / Cookie aux noix")</small> :
+        </label>
+        <textarea id="commande" name="commande" rows="4" placeholder="Indiquez ici les cookies que vous souhaitez commander" required></textarea>
+        
+        <button type="submit">Envoyer la commande</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
